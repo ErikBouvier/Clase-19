@@ -5,10 +5,16 @@ class Curso(models.Model):
     nombre = models.CharField(max_length=40)
     comision = models.IntegerField()
 
+    def __str__(self):
+        return f"Nombre del Curso: {self.nombre} - Numero de comision: {self.comision}" 
+
 class Estudiante(models.Model):
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=40)
     email = models.EmailField()
+
+    def __str__(self):
+        return f"Nombre del estudiante: {self.nombre, self.apellido}"
 
 class Profesor(models.Model):
     nombre = models.CharField(max_length=40)
